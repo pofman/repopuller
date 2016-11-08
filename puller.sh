@@ -5,9 +5,11 @@ baseDir=${PWD}
 baseDir="$baseDir/"
 baseDirLength=${#baseDir}
 
-while IFS='' read -r line || [[ -n "$line" ]]; do
-    excludedFolders+=("$line")
-done < "excludeFolders.txt"
+if [ -f excludeFoldersi.txt ]; then
+    while IFS='' read -r line || [[ -n "$line" ]]; do
+        excludedFolders+=("$line")
+    done < "excludeFolders.txt"
+fi
 
 for repoDir in $baseDir*/
 do
