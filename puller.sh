@@ -2,6 +2,7 @@
 
 excludedFolders=()
 baseDir=${PWD}
+baseDir="$baseDir/"
 baseDirLength=${#baseDir}
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
